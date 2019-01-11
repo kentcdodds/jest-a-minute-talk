@@ -1,5 +1,5 @@
 {
-  "name": "demo-final",
+  "name": "advanced-final",
   "private": true,
   "scripts": {
     "test": "jest",
