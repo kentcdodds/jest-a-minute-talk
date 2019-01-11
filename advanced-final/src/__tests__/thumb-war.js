@@ -1,20 +1,16 @@
 import thumbWar from '../thumb-war'
-import utilsMock from '../utils'
+import {getWinner} from '../utils'
 
-jest.mock('../utils', () => {
-  return {
-    getWinner: jest.fn((p1, p2) => Promise.resolve(p1)),
-  }
-})
+jest.mock('../utils')
 
 afterEach(() => {
-  utilsMock.getWinner.mockClear()
+  getWinner.mockClear()
 })
 
 test('returns winner', async () => {
   const winner = await thumbWar('Kent C. Dodds', 'Ken Wheeler')
   expect(winner).toBe('Kent C. Dodds')
-  expect(utilsMock.getWinner.mock.calls).toEqual([
+  expect(getWinner.mock.calls).toEqual([
     ['Kent C. Dodds', 'Ken Wheeler'],
     ['Kent C. Dodds', 'Ken Wheeler'],
   ])

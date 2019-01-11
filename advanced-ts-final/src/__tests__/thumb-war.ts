@@ -1,11 +1,7 @@
 import thumbWar from '../thumb-war'
 import {getWinner as getWinnerMock} from '../utils'
 
-jest.mock('../utils', () => {
-  return {
-    getWinner: jest.fn((p1, p2) => Promise.resolve(p1)),
-  }
-})
+jest.mock('../utils')
 
 afterEach(() => {
   ;(getWinnerMock as jest.Mock<{}>).mockClear()
