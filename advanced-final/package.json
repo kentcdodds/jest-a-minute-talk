@@ -2,7 +2,7 @@
   "name": "advanced-final",
   "private": true,
   "scripts": {
-    "test": "jest",
+    "test": "jest --watch",
     "test:coverage": "jest --coverage"
   },
   "author": "Kent C. Dodds <kent@doddsfamily.us> (http://kentcdodds.com/)",
@@ -13,11 +13,18 @@
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^23.6.0",
     "jest": "^23.6.0",
+    "jest-watch-typeahead": "^0.2.0",
     "prettier": "^1.15.3"
   },
   "babel": {
     "presets": [
       "@babel/preset-env"
+    ]
+  },
+  "jest": {
+    "watchPlugins": [
+      "jest-watch-typeahead/filename",
+      "jest-watch-typeahead/testname"
     ]
   }
 }
